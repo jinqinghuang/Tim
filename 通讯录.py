@@ -10,9 +10,12 @@ while flag == "a" or "b" or "c" or "d" or "e" :
     5.输入e根据姓名查找响应联系人手机号  \n")
     if t == "a":
         name = input("请输入联系人姓名：")
-        telnum = input("请输入联系人号码：")
-        telbook[name] = telnum
-        print("存储成功!") 
+        if name in telbook:
+            print("名字重复，不能使用！请换用其他名字！")
+        else:
+            telnum = input("请输入联系人号码：")
+            telbook[name] = telnum
+            print("存储成功!") 
         w = input("继续操作请输入'y',任意键退出\n")
         if w == "y":
             continue
@@ -34,9 +37,12 @@ while flag == "a" or "b" or "c" or "d" or "e" :
 
     elif t == "c":
         name = input ("请输入需要修改号码的联系人：")
-        telnum = input("请输入手机号：")
-        telbook[name] = telnum
-        print("修改成功!")
+        if name not in telbook:
+            print("联系人不存在")
+        else:
+            telnum = input("请输入手机号：")
+            telbook[name] = telnum
+            print("修改成功!")
         w = input("继续操作请输入'y',任意键退出\n")
         if w == "y":
             continue
