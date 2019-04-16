@@ -10,7 +10,7 @@ import pandas as pd
 import matplotlib
 font = {'family':'SimHei'}
 matplotlib.rc('font',**font)
-data = pd.read_csv('35.csv')
+data = pd.read_csv('35.csv')#因中文文件名无法识别所以改为了数字文件名
 row = data.columns[5:20]
 plt.xlabel('date')
 plt.ylabel('score')
